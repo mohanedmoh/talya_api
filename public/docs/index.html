@@ -1,0 +1,935 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Laravel Documentation</title>
+
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../docs/css/theme-default.style.css" media="screen">
+    <link rel="stylesheet" href="../docs/css/theme-default.print.css" media="print">
+    <script src="../docs/js/theme-default-3.11.1.js"></script>
+
+    <link rel="stylesheet"
+          href="//unpkg.com/@highlightjs/cdn-assets@10.7.2/styles/obsidian.min.css">
+    <script src="//unpkg.com/@highlightjs/cdn-assets@10.7.2/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <script src="//cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
+    <script>
+        var baseUrl = "http://localhost";
+        var useCsrf = Boolean();
+        var csrfUrl = "/sanctum/csrf-cookie";
+    </script>
+    <script src="../docs/js/tryitout-3.11.1.js"></script>
+
+</head>
+
+<body data-languages="[&quot;bash&quot;,&quot;javascript&quot;]">
+<a href="#" id="nav-button">
+      <span>
+        MENU
+        <img src="../docs/images/navbar.png" alt="navbar-image" />
+      </span>
+</a>
+<div class="tocify-wrapper">
+                <div class="lang-selector">
+                            <a href="#" data-language-name="bash">bash</a>
+                            <a href="#" data-language-name="javascript">javascript</a>
+                    </div>
+        <div class="search">
+        <input type="text" class="search" id="input-search" placeholder="Search">
+    </div>
+    <ul class="search-results"></ul>
+
+    <ul id="toc">
+    </ul>
+
+            <ul class="toc-footer" id="toc-footer">
+                            <li><a href="../docs/collection.json">View Postman collection</a></li>
+                            <li><a href="../docs/openapi.yaml">View OpenAPI spec</a></li>
+                            <li><a href="http://github.com/knuckleswtf/scribe">Documentation powered by Scribe ✍</a></li>
+                    </ul>
+            <ul class="toc-footer" id="last-updated">
+            <li>Last updated: October 10 2021</li>
+        </ul>
+</div>
+<div class="page-wrapper">
+    <div class="dark-box"></div>
+    <div class="content">
+        <h1>Introduction</h1>
+<p>This documentation aims to provide all the information you need to work with our API.</p>
+<aside>As you scroll, you'll see code examples for working with the API in different programming languages in the dark area to the right (or as part of the content on mobile).
+You can switch the language used with the tabs at the top right (or from the nav menu at the top left on mobile).</aside>
+<blockquote>
+<p>Base URL</p>
+</blockquote>
+<pre><code class="language-yaml">http://localhost</code></pre>
+
+        <h1>Authenticating requests</h1>
+<p>This API is not authenticated.</p>
+
+        <h1 id="endpoints">Endpoints</h1>
+
+    
+
+            <h2 id="endpoints-POSTapi-modify_payment">POST api/modify_payment</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-modify_payment">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/modify_payment" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"op_id\": 308629520.5685292,
+    \"type\": \"vitae\",
+    \"new_installment_package\": 109112.723,
+    \"first_installment_date\": \"2021-10-10T15:29:54\",
+    \"last_installment_date\": \"2021-10-10T15:29:54\"
+}"
+</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/modify_payment"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "op_id": 308629520.5685292,
+    "type": "vitae",
+    "new_installment_package": 109112.723,
+    "first_installment_date": "2021-10-10T15:29:54",
+    "last_installment_date": "2021-10-10T15:29:54"
+}
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-POSTapi-modify_payment">
+</span>
+<span id="execution-results-POSTapi-modify_payment" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-modify_payment"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-modify_payment"></code></pre>
+</span>
+<span id="execution-error-POSTapi-modify_payment" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-modify_payment"></code></pre>
+</span>
+<form id="form-POSTapi-modify_payment" data-method="POST"
+      data-path="api/modify_payment"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-modify_payment', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-modify_payment"
+                    onclick="tryItOut('POSTapi-modify_payment');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-modify_payment"
+                    onclick="cancelTryOut('POSTapi-modify_payment');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-modify_payment" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/modify_payment</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>op_id</code></b>&nbsp;&nbsp;<small>number</small>  &nbsp;
+                <input type="number"
+               name="op_id"
+               data-endpoint="POSTapi-modify_payment"
+               data-component="body" required  hidden>
+    <br>
+        </p>
+                <p>
+            <b><code>type</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="type"
+               data-endpoint="POSTapi-modify_payment"
+               data-component="body"  hidden>
+    <br>
+        </p>
+                <p>
+            <b><code>new_installment_package</code></b>&nbsp;&nbsp;<small>number</small>     <i>optional</i> &nbsp;
+                <input type="number"
+               name="new_installment_package"
+               data-endpoint="POSTapi-modify_payment"
+               data-component="body"  hidden>
+    <br>
+        </p>
+                <p>
+            <b><code>first_installment_date</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="first_installment_date"
+               data-endpoint="POSTapi-modify_payment"
+               data-component="body"  hidden>
+    <br>
+<p>Must be a valid date.</p>        </p>
+                <p>
+            <b><code>last_installment_date</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="last_installment_date"
+               data-endpoint="POSTapi-modify_payment"
+               data-component="body"  hidden>
+    <br>
+<p>Must be a valid date.</p>        </p>
+    
+    </form>
+
+            <h2 id="endpoints-POSTapi-modify_owner">POST api/modify_owner</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-modify_owner">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/modify_owner" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"op_id\": 2408.722,
+    \"owner_name\": \"quod\",
+    \"fees\": 27739.80811
+}"
+</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/modify_owner"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "op_id": 2408.722,
+    "owner_name": "quod",
+    "fees": 27739.80811
+}
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-POSTapi-modify_owner">
+</span>
+<span id="execution-results-POSTapi-modify_owner" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-modify_owner"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-modify_owner"></code></pre>
+</span>
+<span id="execution-error-POSTapi-modify_owner" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-modify_owner"></code></pre>
+</span>
+<form id="form-POSTapi-modify_owner" data-method="POST"
+      data-path="api/modify_owner"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-modify_owner', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-modify_owner"
+                    onclick="tryItOut('POSTapi-modify_owner');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-modify_owner"
+                    onclick="cancelTryOut('POSTapi-modify_owner');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-modify_owner" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/modify_owner</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>op_id</code></b>&nbsp;&nbsp;<small>number</small>  &nbsp;
+                <input type="number"
+               name="op_id"
+               data-endpoint="POSTapi-modify_owner"
+               data-component="body" required  hidden>
+    <br>
+        </p>
+                <p>
+            <b><code>owner_name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="owner_name"
+               data-endpoint="POSTapi-modify_owner"
+               data-component="body" required  hidden>
+    <br>
+        </p>
+                <p>
+            <b><code>fees</code></b>&nbsp;&nbsp;<small>number</small>  &nbsp;
+                <input type="number"
+               name="fees"
+               data-endpoint="POSTapi-modify_owner"
+               data-component="body" required  hidden>
+    <br>
+        </p>
+    
+    </form>
+
+            <h2 id="endpoints-POSTapi-cancel_operation">POST api/cancel_operation</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-cancel_operation">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/cancel_operation" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"cancel_type\": 35204.14088,
+    \"op_id\": 849,
+    \"rest_amount\": 46224577.9990226,
+    \"talya_cancellation_percentage\": 7.55,
+    \"returned_amount\": 170.93
+}"
+</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/cancel_operation"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "cancel_type": 35204.14088,
+    "op_id": 849,
+    "rest_amount": 46224577.9990226,
+    "talya_cancellation_percentage": 7.55,
+    "returned_amount": 170.93
+}
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-POSTapi-cancel_operation">
+</span>
+<span id="execution-results-POSTapi-cancel_operation" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-cancel_operation"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-cancel_operation"></code></pre>
+</span>
+<span id="execution-error-POSTapi-cancel_operation" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-cancel_operation"></code></pre>
+</span>
+<form id="form-POSTapi-cancel_operation" data-method="POST"
+      data-path="api/cancel_operation"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-cancel_operation', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-cancel_operation"
+                    onclick="tryItOut('POSTapi-cancel_operation');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-cancel_operation"
+                    onclick="cancelTryOut('POSTapi-cancel_operation');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-cancel_operation" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/cancel_operation</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>cancel_type</code></b>&nbsp;&nbsp;<small>number</small>  &nbsp;
+                <input type="number"
+               name="cancel_type"
+               data-endpoint="POSTapi-cancel_operation"
+               data-component="body" required  hidden>
+    <br>
+        </p>
+                <p>
+            <b><code>op_id</code></b>&nbsp;&nbsp;<small>number</small>  &nbsp;
+                <input type="number"
+               name="op_id"
+               data-endpoint="POSTapi-cancel_operation"
+               data-component="body" required  hidden>
+    <br>
+        </p>
+                <p>
+            <b><code>rest_amount</code></b>&nbsp;&nbsp;<small>number</small>     <i>optional</i> &nbsp;
+                <input type="number"
+               name="rest_amount"
+               data-endpoint="POSTapi-cancel_operation"
+               data-component="body"  hidden>
+    <br>
+        </p>
+                <p>
+            <b><code>talya_cancellation_percentage</code></b>&nbsp;&nbsp;<small>number</small>     <i>optional</i> &nbsp;
+                <input type="number"
+               name="talya_cancellation_percentage"
+               data-endpoint="POSTapi-cancel_operation"
+               data-component="body"  hidden>
+    <br>
+        </p>
+                <p>
+            <b><code>returned_amount</code></b>&nbsp;&nbsp;<small>number</small>     <i>optional</i> &nbsp;
+                <input type="number"
+               name="returned_amount"
+               data-endpoint="POSTapi-cancel_operation"
+               data-component="body"  hidden>
+    <br>
+        </p>
+    
+    </form>
+
+            <h2 id="endpoints-POSTapi-payments">POST api/payments</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-payments">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/payments" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"op_id\": 32740.576094435
+}"
+</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/payments"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "op_id": 32740.576094435
+}
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-POSTapi-payments">
+</span>
+<span id="execution-results-POSTapi-payments" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-payments"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-payments"></code></pre>
+</span>
+<span id="execution-error-POSTapi-payments" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-payments"></code></pre>
+</span>
+<form id="form-POSTapi-payments" data-method="POST"
+      data-path="api/payments"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-payments', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-payments"
+                    onclick="tryItOut('POSTapi-payments');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-payments"
+                    onclick="cancelTryOut('POSTapi-payments');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-payments" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/payments</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>op_id</code></b>&nbsp;&nbsp;<small>number</small>  &nbsp;
+                <input type="number"
+               name="op_id"
+               data-endpoint="POSTapi-payments"
+               data-component="body" required  hidden>
+    <br>
+        </p>
+    
+    </form>
+
+            <h2 id="endpoints-POSTapi-insert_operation">POST api/insert_operation</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-insert_operation">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/insert_operation" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"client_id\": 65,
+    \"plot_id\": 897.395688,
+    \"payment_method\": 203682.8060955,
+    \"paid_advance\": 44608966,
+    \"purchased_package\": 549.5,
+    \"client_paid_cash\": 547131410,
+    \"first_installment_date\": \"2021-10-10T15:29:54\",
+    \"last_installment_date\": \"2021-10-10T15:29:54\"
+}"
+</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/insert_operation"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "client_id": 65,
+    "plot_id": 897.395688,
+    "payment_method": 203682.8060955,
+    "paid_advance": 44608966,
+    "purchased_package": 549.5,
+    "client_paid_cash": 547131410,
+    "first_installment_date": "2021-10-10T15:29:54",
+    "last_installment_date": "2021-10-10T15:29:54"
+}
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-POSTapi-insert_operation">
+</span>
+<span id="execution-results-POSTapi-insert_operation" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-insert_operation"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-insert_operation"></code></pre>
+</span>
+<span id="execution-error-POSTapi-insert_operation" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-insert_operation"></code></pre>
+</span>
+<form id="form-POSTapi-insert_operation" data-method="POST"
+      data-path="api/insert_operation"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-insert_operation', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-insert_operation"
+                    onclick="tryItOut('POSTapi-insert_operation');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-insert_operation"
+                    onclick="cancelTryOut('POSTapi-insert_operation');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-insert_operation" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/insert_operation</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>client_id</code></b>&nbsp;&nbsp;<small>number</small>  &nbsp;
+                <input type="number"
+               name="client_id"
+               data-endpoint="POSTapi-insert_operation"
+               data-component="body" required  hidden>
+    <br>
+        </p>
+                <p>
+            <b><code>plot_id</code></b>&nbsp;&nbsp;<small>number</small>  &nbsp;
+                <input type="number"
+               name="plot_id"
+               data-endpoint="POSTapi-insert_operation"
+               data-component="body" required  hidden>
+    <br>
+        </p>
+                <p>
+            <b><code>payment_method</code></b>&nbsp;&nbsp;<small>number</small>     <i>optional</i> &nbsp;
+                <input type="number"
+               name="payment_method"
+               data-endpoint="POSTapi-insert_operation"
+               data-component="body"  hidden>
+    <br>
+        </p>
+                <p>
+            <b><code>paid_advance</code></b>&nbsp;&nbsp;<small>number</small>     <i>optional</i> &nbsp;
+                <input type="number"
+               name="paid_advance"
+               data-endpoint="POSTapi-insert_operation"
+               data-component="body"  hidden>
+    <br>
+        </p>
+                <p>
+            <b><code>purchased_package</code></b>&nbsp;&nbsp;<small>number</small>     <i>optional</i> &nbsp;
+                <input type="number"
+               name="purchased_package"
+               data-endpoint="POSTapi-insert_operation"
+               data-component="body"  hidden>
+    <br>
+        </p>
+                <p>
+            <b><code>client_paid_cash</code></b>&nbsp;&nbsp;<small>number</small>     <i>optional</i> &nbsp;
+                <input type="number"
+               name="client_paid_cash"
+               data-endpoint="POSTapi-insert_operation"
+               data-component="body"  hidden>
+    <br>
+        </p>
+                <p>
+            <b><code>first_installment_date</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="first_installment_date"
+               data-endpoint="POSTapi-insert_operation"
+               data-component="body"  hidden>
+    <br>
+<p>Must be a valid date.</p>        </p>
+                <p>
+            <b><code>last_installment_date</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="last_installment_date"
+               data-endpoint="POSTapi-insert_operation"
+               data-component="body"  hidden>
+    <br>
+<p>Must be a valid date.</p>        </p>
+    
+    </form>
+
+            <h2 id="endpoints-POSTapi-insert_operation_cost">POST api/insert_operation_cost</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-insert_operation_cost">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/insert_operation_cost" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"op_id\": 2.72498962,
+    \"type\": 9156.73241,
+    \"cost\": 14207
+}"
+</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/insert_operation_cost"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "op_id": 2.72498962,
+    "type": 9156.73241,
+    "cost": 14207
+}
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-POSTapi-insert_operation_cost">
+</span>
+<span id="execution-results-POSTapi-insert_operation_cost" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-insert_operation_cost"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-insert_operation_cost"></code></pre>
+</span>
+<span id="execution-error-POSTapi-insert_operation_cost" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-insert_operation_cost"></code></pre>
+</span>
+<form id="form-POSTapi-insert_operation_cost" data-method="POST"
+      data-path="api/insert_operation_cost"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-insert_operation_cost', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-insert_operation_cost"
+                    onclick="tryItOut('POSTapi-insert_operation_cost');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-insert_operation_cost"
+                    onclick="cancelTryOut('POSTapi-insert_operation_cost');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-insert_operation_cost" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/insert_operation_cost</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>op_id</code></b>&nbsp;&nbsp;<small>number</small>  &nbsp;
+                <input type="number"
+               name="op_id"
+               data-endpoint="POSTapi-insert_operation_cost"
+               data-component="body" required  hidden>
+    <br>
+        </p>
+                <p>
+            <b><code>type</code></b>&nbsp;&nbsp;<small>number</small>  &nbsp;
+                <input type="number"
+               name="type"
+               data-endpoint="POSTapi-insert_operation_cost"
+               data-component="body" required  hidden>
+    <br>
+        </p>
+                <p>
+            <b><code>cost</code></b>&nbsp;&nbsp;<small>number</small>  &nbsp;
+                <input type="number"
+               name="cost"
+               data-endpoint="POSTapi-insert_operation_cost"
+               data-component="body" required  hidden>
+    <br>
+        </p>
+    
+    </form>
+
+            <h2 id="endpoints-GETapi-user">GET api/user</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-user">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/user" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/user"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-GETapi-user">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-user" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-user"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-user"></code></pre>
+</span>
+<span id="execution-error-GETapi-user" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-user"></code></pre>
+</span>
+<form id="form-GETapi-user" data-method="GET"
+      data-path="api/user"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-user', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-user"
+                    onclick="tryItOut('GETapi-user');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-user"
+                    onclick="cancelTryOut('GETapi-user');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-user" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/user</code></b>
+        </p>
+                    </form>
+
+    
+
+        
+    </div>
+    <div class="dark-box">
+                    <div class="lang-selector">
+                                    <a href="#" data-language-name="bash">bash</a>
+                                    <a href="#" data-language-name="javascript">javascript</a>
+                            </div>
+            </div>
+</div>
+<script>
+    $(function () {
+        var exampleLanguages = ["bash","javascript"];
+        setupLanguages(exampleLanguages);
+    });
+</script>
+</body>
+</html>

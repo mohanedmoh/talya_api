@@ -1,0 +1,273 @@
+name: Endpoints
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - POST
+    uri: api/modify_payment
+    metadata:
+      title: ''
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      op_id:
+        name: op_id
+        description: ''
+        required: true
+        example: 308629520.56853
+        type: number
+      type:
+        name: type
+        description: ''
+        required: false
+        example: vitae
+        type: string
+      new_installment_package:
+        name: new_installment_package
+        description: ''
+        required: false
+        example: 109112.723
+        type: number
+      first_installment_date:
+        name: first_installment_date
+        description: 'Must be a valid date.'
+        required: false
+        example: '2021-10-10T15:29:54'
+        type: string
+      last_installment_date:
+        name: last_installment_date
+        description: 'Must be a valid date.'
+        required: false
+        example: '2021-10-10T15:29:54'
+        type: string
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: api/modify_owner
+    metadata:
+      title: ''
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      op_id:
+        name: op_id
+        description: ''
+        required: true
+        example: 2408.722
+        type: number
+      owner_name:
+        name: owner_name
+        description: ''
+        required: true
+        example: quod
+        type: string
+      fees:
+        name: fees
+        description: ''
+        required: true
+        example: 27739.80811
+        type: number
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: api/cancel_operation
+    metadata:
+      title: ''
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      cancel_type:
+        name: cancel_type
+        description: ''
+        required: true
+        example: 35204.14088
+        type: number
+      op_id:
+        name: op_id
+        description: ''
+        required: true
+        example: !!float 849
+        type: number
+      rest_amount:
+        name: rest_amount
+        description: ''
+        required: false
+        example: 46224577.999023
+        type: number
+      talya_cancellation_percentage:
+        name: talya_cancellation_percentage
+        description: ''
+        required: false
+        example: 7.55
+        type: number
+      returned_amount:
+        name: returned_amount
+        description: ''
+        required: false
+        example: 170.93
+        type: number
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: api/payments
+    metadata:
+      title: ''
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      op_id:
+        name: op_id
+        description: ''
+        required: true
+        example: 32740.576094435
+        type: number
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: api/insert_operation
+    metadata:
+      title: ''
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      client_id:
+        name: client_id
+        description: ''
+        required: true
+        example: !!float 65
+        type: number
+      plot_id:
+        name: plot_id
+        description: ''
+        required: true
+        example: 897.395688
+        type: number
+      payment_method:
+        name: payment_method
+        description: ''
+        required: false
+        example: 203682.8060955
+        type: number
+      paid_advance:
+        name: paid_advance
+        description: ''
+        required: false
+        example: !!float 44608966
+        type: number
+      purchased_package:
+        name: purchased_package
+        description: ''
+        required: false
+        example: 549.5
+        type: number
+      client_paid_cash:
+        name: client_paid_cash
+        description: ''
+        required: false
+        example: !!float 547131410
+        type: number
+      first_installment_date:
+        name: first_installment_date
+        description: 'Must be a valid date.'
+        required: false
+        example: '2021-10-10T15:29:54'
+        type: string
+      last_installment_date:
+        name: last_installment_date
+        description: 'Must be a valid date.'
+        required: false
+        example: '2021-10-10T15:29:54'
+        type: string
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: api/insert_operation_cost
+    metadata:
+      title: ''
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      op_id:
+        name: op_id
+        description: ''
+        required: true
+        example: 2.72498962
+        type: number
+      type:
+        name: type
+        description: ''
+        required: true
+        example: 9156.73241
+        type: number
+      cost:
+        name: cost
+        description: ''
+        required: true
+        example: !!float 14207
+        type: number
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: api/user
+    metadata:
+      title: ''
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []

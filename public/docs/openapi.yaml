@@ -1,0 +1,346 @@
+openapi: 3.0.3
+info:
+  title: Laravel
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost'
+paths:
+  /api/modify_payment:
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                op_id:
+                  type: number
+                  description: ''
+                  example: 308629520.56853
+                type:
+                  type: string
+                  description: ''
+                  example: vitae
+                new_installment_package:
+                  type: number
+                  description: ''
+                  example: 109112.723
+                first_installment_date:
+                  type: string
+                  description: 'Must be a valid date.'
+                  example: '2021-10-10T15:29:54'
+                last_installment_date:
+                  type: string
+                  description: 'Must be a valid date.'
+                  example: '2021-10-10T15:29:54'
+              required:
+                - op_id
+      security: []
+  /api/modify_owner:
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                op_id:
+                  type: number
+                  description: ''
+                  example: 2408.722
+                owner_name:
+                  type: string
+                  description: ''
+                  example: quod
+                fees:
+                  type: number
+                  description: ''
+                  example: 27739.80811
+              required:
+                - op_id
+                - owner_name
+                - fees
+      security: []
+  /api/cancel_operation:
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                cancel_type:
+                  type: number
+                  description: ''
+                  example: 35204.14088
+                op_id:
+                  type: number
+                  description: ''
+                  example: !!float 849
+                rest_amount:
+                  type: number
+                  description: ''
+                  example: 46224577.999023
+                talya_cancellation_percentage:
+                  type: number
+                  description: ''
+                  example: 7.55
+                returned_amount:
+                  type: number
+                  description: ''
+                  example: 170.93
+              required:
+                - cancel_type
+                - op_id
+      security: []
+  /api/payments:
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                op_id:
+                  type: number
+                  description: ''
+                  example: 32740.576094435
+              required:
+                - op_id
+      security: []
+  /api/insert_operation:
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                client_id:
+                  type: number
+                  description: ''
+                  example: !!float 65
+                plot_id:
+                  type: number
+                  description: ''
+                  example: 897.395688
+                payment_method:
+                  type: number
+                  description: ''
+                  example: 203682.8060955
+                paid_advance:
+                  type: number
+                  description: ''
+                  example: !!float 44608966
+                purchased_package:
+                  type: number
+                  description: ''
+                  example: 549.5
+                client_paid_cash:
+                  type: number
+                  description: ''
+                  example: !!float 547131410
+                first_installment_date:
+                  type: string
+                  description: 'Must be a valid date.'
+                  example: '2021-10-10T15:29:54'
+                last_installment_date:
+                  type: string
+                  description: 'Must be a valid date.'
+                  example: '2021-10-10T15:29:54'
+              required:
+                - client_id
+                - plot_id
+      security: []
+  /api/insert_operation_cost:
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                op_id:
+                  type: number
+                  description: ''
+                  example: 2.72498962
+                type:
+                  type: number
+                  description: ''
+                  example: 9156.73241
+                cost:
+                  type: number
+                  description: ''
+                  example: !!float 14207
+              required:
+                - op_id
+                - type
+                - cost
+      security: []
+  /api/user:
+    get:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+tags:
+  -
+    name: Endpoints
+    description: ''
